@@ -14,7 +14,7 @@ jobs:
             gem install dpl
             gem install json_pure
             cd src
-            dpl --provider=heroku --app='github-gitlab-heroku' --api-key='24109554-5cbe-4b12-aceb-f0b90ab788ee'
+            dpl --provider=heroku --app=$HEROKU_APP_PROD --api-key=$HEROKU_APIKEY
 
 workflows:
   deploy:
