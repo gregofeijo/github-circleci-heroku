@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  deploy-prod:
+    docker:
+      - image: alpine
+    steps:
+      - checkout
+      - run:
+          command: |
+            apk add ruby-dev
+            apk add git 
+            apk add curl
+            gem install dpl
+            gem install json_pure
+            cd src
+            dpl --provider=heroku --app='github-gitlab-heroku' --api-key='24109554-5cbe-4b12-aceb-f0b90ab788ee'
+
+workflows:
+  deploy:
+    jobs:
+      - deploy-prod
