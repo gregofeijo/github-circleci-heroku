@@ -1,4 +1,4 @@
 $ErrorActionPreference = "Stop"
 
-docker build . -t alpine-heroku-deploy
-docker run -ti --rm alpine-heroku-deploy
+docker build . -t alpine-firebase-deploy
+docker run -ti --rm alpine-firebase-deploy
