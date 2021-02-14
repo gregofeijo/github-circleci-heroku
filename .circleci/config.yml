@@ -6,21 +6,11 @@ jobs:
       - image: alpine
     steps:
       - checkout
-      - run:
-          command: apk add ruby-dev
-          background: true
-      - run: 
-          command: apk add git 
-          background: true
-      - run: 
-          command: apk add curl
-          background: true
-      - run: 
-          command: gem install dpl
-          background: true
-      - run: 
-          command: gem install json_pure
-          background: true
+      - run: apk add ruby-dev
+      - run: apk add git 
+      - run: apk add curl
+      - run: gem install dpl
+      - run: gem install json_pure
       - run:
           command: |
             cd src
